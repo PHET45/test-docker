@@ -1,0 +1,20 @@
+{
+  "name": "test-docker",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/PHET45/test-docker#readme",
+  "bugs": {
+    "url": "https://github.com/PHET45/test-docker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PHET45/test-docker.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
