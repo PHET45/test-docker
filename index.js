@@ -4,6 +4,7 @@ const mysql = require('mysql2/promise')
 const app = express()
 const port = 8000
 
+let conn = null
 const initMySQL = async () => {
   conn = await mysql.createConnection({
     host: 'db', // หรือใส่เป็น localhost ก็ได้
