@@ -5,13 +5,14 @@ const app = express()
 const port = 8000
 
 
+let connection 
 
 async function initMySQL() {
   let retries = 5;
 
   while (retries) {
     try {
-      const connection = await mysql.createConnection({
+        connection = await mysql.createConnection({
         host: "db",
         user: "root",
         password: "root",
