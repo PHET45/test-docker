@@ -4,7 +4,7 @@ const mysql = require('mysql2/promise')
 const app = express()
 const port = 8000
 
-const mysql = require("mysql2/promise");
+
 
 async function initMySQL() {
   let retries = 5;
