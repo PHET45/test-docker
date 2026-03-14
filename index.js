@@ -4,15 +4,31 @@ const mysql = require('mysql2/promise')
 const app = express()
 const port = 8000
 
-let conn = null
-const initMySQL = async () => {
-  conn = await mysql.createConnection({
-    host: 'db', // หรือใส่เป็น localhost ก็ได้
-    user: 'root',
-    password: 'root',
-    database: 'tutorial'
-  })
+const mysql = require("mysql2/promise");
+
+async function initMySQL() {
+  let retries = 5;
+
+  while (retries) {
+    try {
+      const connection = await mysql.createConnection({
+        host: "db",
+        user: "root",
+        password: "root",
+        database: "tutorial",
+      });
+
+      console.log("MySQL connected!");
+      return connection;
+    } catch (err) {
+      console.log("MySQL not ready, retrying...");
+      retries--;
+      await new Promise(res => setTimeout(res, 5000));
+    }
+  }
 }
+
+initMySQL();
 
 app.get('/hello-world', (req, res) => {
   res.send('hello world')
