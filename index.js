@@ -36,7 +36,7 @@ app.get('/hello-world', (req, res) => {
 
 // path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/users', async (req, res) => {
-  const [results] = await conn.query('SELECT * FROM users')
+  const [results] = await connection.query('SELECT * FROM users')
   res.json(results)
 })
 
